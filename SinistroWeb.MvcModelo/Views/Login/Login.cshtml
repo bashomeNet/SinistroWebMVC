@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sies - Login Sinistro</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Source+Sans+Pro" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="~/Content/global.css" rel="stylesheet" />
+    <link href="~/Content/custom.min.css" rel="stylesheet" />
+</head>
+<body id="sns-login-background">
+    <div class="container sns-position-title">
+        <div class="row sns-align-center">
+            <div class="col-md-4 col-sm-5 col-xs-10">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 sns-align-center">
+                                <img src="~/Images/grupo_sinaf.jpg" class="sns-login-img-header">
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                    <div class="form-group col-xs-12">
+                                        <div class="input-group">
+                                            <input id="sns-user-login" type="text" class="form-control input-md" placeholder="Usuário">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn sns-btn-ok btn-md">
+                                                    <span class="fa fa-user sns-icon-sm-position"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                        <div class="input-group">
+                                            <input id="sns-password-login" type="text" class="form-control input-md" placeholder="Senha">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn sns-btn-ok btn-md">
+                                                    <span class="fa fa-lock sns-icon-sm-position"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="divider-dashed"></div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="form-group col-xs-12 sns-position-title-header">
+                                        <button id="sns-btn-login" type="button" class="btn sns-btn-ok btn-md col-xs-12">
+                                            <span class="fa fa-sign-in sns-margin-icon" title="Login"></span>Login
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/global.js"></script>
+
+</body>
+</html>

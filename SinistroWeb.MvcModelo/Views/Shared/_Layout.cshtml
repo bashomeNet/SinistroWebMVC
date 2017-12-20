@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sies - Módulo de Sinistro</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Source+Sans+Pro" rel="stylesheet" />
+    <!-- DataTable -->
+    <link href="~/Content/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/responsive.dataTables.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="~/Content/global.css" rel="stylesheet" />
+    <link href="~/Content/custom.min.css" rel="stylesheet" />
+    @*@Scripts.Render("~/Content/bootstrapCss")
+        @Scripts.Render("~/Content/css")*@
+
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" @*style="border: 0;position: fixed;"*@>
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="~/Images/logo_sinaf.png" class="sns-sidebar-img-header">
+                            <span class="sns-sidebar-title-header">Sinistro</span>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix" @*style="position: fixed;top: 35px;width: 230px;padding: 10px;"*@>
+                        <div class="profile_info">
+                            <span><b>Olá,</b></span>
+                            <h2>Bruno Santos</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section" @*style="width: 230px;position: fixed;top: 120px;"*@>
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-cogs"></i> Operações <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>@Html.ActionLink("Crud Pessoa", "Pessoa", "Pessoa")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-clipboard"></i> Relatórios <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="index.html">Ficha de Sinistro</a></li>
+                                        <li><a href="index.html">Sinistro</a></li>
+                                        <li><a href="index.html">Indenização</a></li>
+                                        <li><a href="index.html">Despesa</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Consultas Genéricas</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-filter"></i> Consulta Genéricas <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="index.html">Sinistro</a></li>
+                                        <li><a href="index.html">Indenização</a></li>
+                                        <li><a href="index.html">Despesa</a></li>
+                                        <li><a href="index.html">Pessoa</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav navbar-fixed-top">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars sns-icon-header"></i></a>
+                        </div>
+                        <!-- title header -->
+                        <div class="navbar-left sns-nav-title-align">
+                            <h3 class="sns-position-title-header">@ViewBag.Message</h3>
+                        </div>
+                        <!-- title header -->
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+
+                @RenderBody()
+
+                <!-- Botões responáveis pela exibição dos modais de mensagem de tratamento e deleção -->
+                <button id="btn-modal-msg-retorno" type="button" class="invisible" data-toggle="modal" data-target=".sns-modal-msg-retorno"></button>
+                <button id="btn-modal-deleta" type="button" class="invisible" data-toggle="modal" data-target=".sns-modal-deleta"></button>
+
+                <!-- Modal Confirma Deleção -->
+                <div class="modal fade sns-modal-deleta" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button id="sns-fecha-modal-deleta" type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title" id="sns-title-modal-deleta"></h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <ul id="sns-ul-msg-deleta" class="list-group">
+                                        <li class="list-group-item list-group-item-warning sns-text-bold">Deseja realmente deletar o usuário?</li>
+                                    </ul>
+                                </div>
+
+                                <div class="clearfix line-space-md"></div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button id="sns-confirma-delecao" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">
+                                    <span class="fa fa-trash sns-margin-icon" title="Deletar"></span>Deletar
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                    <span class="fa fa-mail-reply sns-margin-icon" title="Voltar"></span>Voltar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Confirma Deleção -->
+                <!-- Modal Mensagem Retorno -->
+                <div class="modal fade sns-modal-msg-retorno" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title" id="sns-title-modal-usuario-teste"></h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <ul id="sns-ul-msg-retorno" class="list-group">
+                                        <li id="sns-msg-retorno" class="list-group-item list-group-item-success sns-text-bold"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="clearfix line-space-md"></div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                    <span class="fa fa-mail-reply sns-margin-icon" title="Voltar"></span>Voltar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Mensagem Retorno -->
+
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Base: Homologação / Data Sistema: 23/09/2017
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- DataTables Jquery Scripts -->
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/dataTables.bootstrap.js"></script>
+    <script src="~/Scripts/dataTables.responsive.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Scripts/custom.min.js"></script>
+    @*<script src="~/Scripts/moment.min.js"></script>*@
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/global.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,190 @@
+/*
+ * CSS Global
+ * Criado por Jorge Freitas
+ * Data: 26/09/2017
+ */
+/* CSS used here will be applied after bootstrap.css */
+
+/* Imagem background login */
+body#sns-login-background {
+    background: url('../Images/sns-backgorund-login.jpg') no-repeat center center fixed !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+}
+
+.sns-login-img-header{width: 160px; margin: 10px auto 5px auto;}
+.sns-align-center {display: flex;align-items: center;justify-content: center;}
+
+/* Sidebar */
+.nav_title {
+    background-color: #00224f !important;
+}
+.left_col {background-color: #00224f !important;}
+.sns-sidebar-img-header {width: 36px; margin: 10px 10px 5px 15px;}
+.sns-sidebar-title-header {font-weight: 500; font-size: 25px; color: #ECF0F1; vertical-align: -webkit-baseline-middle;}
+.profile_info {padding: 10px !important;}
+
+.nav-sm .nav.side-menu li.active-sm{border-right: 5px solid #1a71bb !important;}
+.nav.side-menu>li.active>a{background: linear-gradient(#083963, #17446c),#00224F !important;}
+.nav.side-menu>li.active{border-right: 5px solid #1a71bb !important;}
+.nav li.current-page{background: rgba(255,255,255,0.10) !important;}
+.nav-sm ul.nav.child_menu li.active {border-right: 5px solid #1a71bb !important;} 
+/* Sidebar */
+
+/* Header */
+.top_nav.navbar-fixed-top{z-index: 3 !important;}
+.sns-nav-title-align{margin-top: 4px;}
+.nav_menu {border-bottom: 1px solid #ccc !important;}
+.nav-sm ul.nav.child_menu {background: #00224F !important;}
+.sns-align-title-top {margin-top: 110px !important;}
+.sns-align-title-top-index {margin-top: 65px !important;}
+.sns-position-title-header{margin-top: 12px !important;}
+
+@media (max-width: 768px) {
+    .toggle {padding-top: 0 !important;}
+}
+/* Header */
+
+/* Toolbox action header */
+.sns-top-toolbox {
+    float: left;
+    background: rgba(221, 221, 221, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    width: 100%;
+    position: relative;
+    margin: 43px 0 20px -20px;
+    padding: 12px 0 8px 30px;
+    position: fixed;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .sns-top-toolbox {margin: 39px 0 20px -10px;}
+}
+
+/* Mantém posicionamento do ícone mesmo com menu minimizado - Barra de ações */
+span.sns-tool-action{margin: 0 8px;font-size: 18px;color:#34495e;cursor: pointer;display: block !important; display: inline-block !important;}
+/* Mantém posicionamento do ícone mesmo com menu minimizado - Input */
+button>span.sns-tool-action{margin: 0 4px 0 0;font-size: 14px;color:#fff;cursor: pointer;display: block !important; display: inline-block !important;}
+
+.sns-tool-action-after::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    background: #ccc;
+    top: -5px;
+    height: 28px;
+    right: -8px;
+    cursor: none;
+
+}
+/* Toolbox action header */
+
+/* Body */
+.sns-none{display: none;}
+.sns-block{display: block;}
+body{background: #00224F !important; color: #5A738E !important;font-family: 'Lato', sans-serif !important;}
+h4 small{font-size: 65%;}
+small.sns-validation{color: #F00B0B !important;}
+textarea{font-size:12px !important;}
+/*label{color: #5A738E !important;}*/
+.sns-text-bold{font-weight:bold;}
+.sns-text-italic{font-style:italic;}
+.sns-icon-header{color: #5A738E !important;}
+legend {font-size: 15px !important; font-weight: 600;}
+.sns-top-space{margin-top: 24px;}
+.checkbox label{padding-left: 0px;}
+.line-space-xsm{padding: 3px;}
+.line-space-sm{padding: 8px;}
+.line-space-md{padding: 15px;}
+.line-space-lg{padding: 23px;}
+.line-space-xlg{padding: 30px;}
+.scroll-table{overflow-y: auto;}
+
+.panel_toolbox{min-width: 30px !important;}
+.collapse-link{margin-top: -26px;}
+.sns-panel-title{margin-bottom: 0px !important;}
+.sns-panel-title small{margin-left: 8px;}
+
+/* Posicionamento do título para header fixo */
+div.sns-position-title{margin-top: 105px;}
+.sns-panel-closed{display: none;}
+/*div.sns-position-title:first-child .title_right{width:auto !important;}*/
+/*.sns-position-btn-group{z-index: 3;position: fixed;width: 100%;margin-left: -218px;}*/
+
+.sns-position-btn-group button span{font-size: 16px !important}
+/*.sns-btn-no:hover{color: #fff; background-color: #DCAE00; border-color: #B99200;}*/
+.sns-btn-ok{color: #fff; background-color: #01306D; border-color: #002454;}
+.sns-btn-ok:hover{color: #fff; background-color: #00224F; border-color: #001633;}
+.sns-btn-ok:focus{color: #fff;}
+
+.sns-btn-no{color: #333;background-color: #e6e6e6;border-color: #adadad;}
+.sns-btn-no:hover{color: #333;background-color: #c7c7c7;border-color: #adadad;}
+
+.sns-margin-icon{margin-right:4px;}
+
+/* Mantém posicionamento do ícone mesmo com menu minimizado */
+.sns-icon-sm-position {display: block !important; display: inline-block !important;}
+.sns-icon-list-position {margin: -5px -10px 0 0;}
+
+.sns-btn-obs-align-avisin{margin: 46px 0 0 !important;}
+.list-group-item {padding: 10px 0px 30px 15px !important;}
+
+@media (max-width: 767px) {
+    .sns-top-space.sns-btn-sm {margin-top: 0;}
+}
+/* Body */
+
+/* Collapse panel */
+/* Collapse head panel */
+.lbl-head-title{font-size: 14px; margin: 0; padding: 5px 5px 5px 0;} 
+.lbl-head-description{font-size: 14px; font-weight: 100; margin: 0 18px 0 0; padding: 5px 5px 5px 0;} 
+.lbl-content-description{font-size: 14px; font-weight: 100; margin: 0; padding: 5px 5px 5px 0;}
+
+/* Datatable */
+.table-striped>tbody>tr.details-row {background-color: #fff !important;}
+
+.sns-sorting-disabled:after{display: none !important; padding-right: 0 !important;}
+/*Desabilita a ordenação da primeira coluna para datatables com checkbox*/
+table.sns-sorting-disabled thead > tr > th.sorting_asc:first-child,
+table.sns-sorting-disabled thead > tr > th.sorting_desc:first-child,
+table.sns-sorting-disabled thead > tr > th.sorting:first-child {
+    padding-right: 0px !important;
+}
+.headings th{background-color: #00224F;color: #fff;text-align:center;}
+.headings tr td:first-child{text-align:center;}
+#sns-table-libindeniz tr td:first-child{text-align:center;}
+#sns-table-libdespesas tr td:first-child{text-align:center;}
+.pagination > .active > a{z-index: 2;}
+
+.sns-table-th-style thead tr th {background-color: #00224F !important;color: #fff !important;border: 1px solid rgba(255,255,255,.15) !important;}
+
+.panel_toolbox{min-width: 30px !important;}
+.td-input-info{padding: 2px 8px !important;}
+.td-input-info input{padding: 0px 10px; font-size: 13px;}
+.sns-table-scroll thead tr th{text-align: center;}
+.sns-td-action{text-align: center; padding: 10px 8px 8px 8px !important;}
+
+table.dataTable thead .sns-no-sort:after{display: none !important;}
+.dataTables_paginate a {background: #00224F !important; color: #fff !important;}
+
+/*.sns-tab-content-space div:last-child{padding-bottom: 20px;}*/
+/* .table-responsive{min-height: 500px;} */
+/* .dataTables_filter {width: auto !important;} */
+.dataTables_paginate ul li a{background-color: #00224F !important; color: #fff !important;}
+
+.form-control-feedback{margin-top: 5px !important;}
+.form-control-feedback.left{left: 0px !important;}
+.form-control.has-feedback-left{padding-left: 40px !important;}
+
+td.details-control {
+    background: url('../Images/square-add-button.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.details td.details-control {
+    background: url('../Images/square-minus-button.png') no-repeat center center;
+}
+/* Datatable */

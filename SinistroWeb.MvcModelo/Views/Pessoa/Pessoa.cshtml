@@ -1,0 +1,124 @@
+﻿@*@using SinistroWeb.MvcModelo.Models
+@model IEnumerable<SinistroWeb.MvcModelo.Models.PessoaModel>*@
+
+@{
+    ViewBag.Title = "Pessoa";
+}
+
+<!-- tool action content -->
+<div class="sns-top-toolbox">
+    <div class="title_left">
+        <div class="btn-group">
+            <span id="sns-novo-pessoa" class="fa fa-file sns-tool-action" title="Novo"></span>
+            <span id="sns-recupera-pessoa" class="fa fa-folder-open sns-tool-action" title="Recuperar"></span>
+            <span id="sns-salva-pessoa" class="fa fa-save sns-tool-action" title="Salvar"></span>
+            <span id="sns-exclui-pessoa" class="fa fa-times sns-tool-action" title="Excluir"></span>
+            <span id="sns-procura-pessoa" class="fa fa-search sns-tool-action sns-tool-action-after" title="Procurar"></span>
+        </div>
+    </div>
+</div>
+<!-- tool action content -->
+
+<div class="sns-position-title">
+
+    <div class="clearfix"></div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 class="sns-panel-title">Pessoa <small></small></h4>
+
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="x_content">
+                @*@using (Html.BeginForm("Pessoa", "Pessoa", FormMethod.Post))
+                {*@
+
+                    @*Início geração token teste*@
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 sns-btn-sm">
+                        <button id="sns-gera-token-pessoa" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-cog sns-margin-icon sns-icon-sm-position" title="Gerar Token"></span>Gerar Token
+                        </button>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label for="sns-token-gerado-pessoa">Token</label>
+                        <textarea id="sns-token-gerado-pessoa" rows="4" class="form-control" maxlength="300" placeholder=" "></textarea>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="divider-dashed"></div>
+                    @*Fim geração token teste*@
+                    
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <label for="sns-cd-pessoa">Código Pessoa</label>
+                        <input id="sns-cd-pessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-busca-pessoa" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-search sns-margin-icon sns-icon-sm-position" title="Buscar"></span>Buscar Pessoa
+                        </button>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="divider-dashed"></div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 sns-top-space sns-btn-sm">
+                        <button id="sns-busca-pessoa-todos" type="button" class="btn sns-btn-ok btn-sm col-md-12 col-sm-12 col-xs-12">
+                            <span class="fa fa-search sns-margin-icon sns-icon-sm-position" title="Buscar Todos"></span>Buscar Todos
+                        </button>
+                    </div>
+
+                    <div id="sns-hid-todos-pessoa" class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <table id="sns-table-pessoa" class="table table-striped table-bordered headings" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="column-title">Cód. Pessoa </th>
+                                    <th class="column-title">Tipo Pessoa </th>
+                                    <th class="column-title">CPF/CGC </th>
+                                    <th class="column-title">Nome </th>
+                                    <th class="column-title">Dt Nascimento </th>
+                                    <th class="column-title">Sexo </th>
+                                    <th class="column-title">Ações </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*@if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => item.cdpes)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.tppes)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.nrcgccpf)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.nmpes)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.dtnas)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.tpsex)</td>
+                                            <td class='sns-td-action'>
+                                                <button type='submit' class='btn btn-primary btn-xs' value='Detalhar'>
+                                                    <span class='fa fa-binoculars sns-margin-icon sns-icon-sm-position' title='Detalhar'></span>Detalhar
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }*@
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                @*}*@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/pessoa.js"></script>
+}
+

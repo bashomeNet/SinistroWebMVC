@@ -1,0 +1,105 @@
+﻿@*@using SinistroWeb.MvcModelo.Models
+@model PessoaModel*@
+
+@{
+    ViewBag.Title = "DetalhePessoa";
+}
+
+<!-- tool action content -->
+<div class="sns-top-toolbox">
+    <div class="title_left">
+        <div class="btn-group">
+            <span id="sns-novo-dtlpessoa" class="fa fa-file sns-tool-action" title="Novo"></span>
+            <span id="sns-recupera-dtlpessoa" class="fa fa-folder-open sns-tool-action" title="Recuperar"></span>
+            <span id="sns-salva-dtlpessoa" class="fa fa-save sns-tool-action" title="Salvar"></span>
+            <span id="sns-exclui-dtlpessoa" class="fa fa-times sns-tool-action" title="Excluir"></span>
+            <span id="sns-procura-dtlpessoa" class="fa fa-search sns-tool-action sns-tool-action-after" title="Procurar"></span>
+        </div>
+    </div>
+</div>
+<!-- tool action content -->
+
+<div class="sns-position-title">
+
+    <div class="clearfix"></div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 class="sns-panel-title">Pessoa <small></small></h4>
+
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="x_content">
+
+                <form>
+
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-4 col-sm-6 col-xs-12" hidden="hidden">
+                        <label for="sns-cd-dtlpessoa">Código Pessoa</label>
+                        @*@Html.LabelFor(x => x.cdpes)*@
+                        <input id="sns-cd-dtlpessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                        @*@Html.TextBoxFor(x => x.cdpes, new { id = "sns-cd-dtlpessoa", @class = "form-control input-sm", required = "required" })*@
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <label for="sns-nome-dtlpessoa">Nome Pessoa</label>
+                        @*@Html.LabelFor(x => x.nmpes)
+                        @Html.TextBoxFor(x => x.nmpes, new { id = "sns-nome-dtlpessoa", @class = "form-control input-sm", required = "required" })*@
+                        <input id="sns-nome-dtlpessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                        <label for="sns-cpfcgc-dtlpessoa">CPF/CGC</label>
+                        @*@Html.LabelFor(x => x.nrcgccpf)
+                    @Html.TextBoxFor(x => x.nrcgccpf, new { id = "sns-cpfcgc-dtlpessoa", @class = "form-control input-sm", required = "required" })*@
+                        <input id="sns-cpfcgc-dtlpessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                        <label for="sns-dtnasc-dtlpessoa">Data Nascimento</label>
+                        @*@Html.LabelFor(x => x.dtnas)
+                        @Html.TextBoxFor(x => x.dtnas, new { id = "sns-dtnasc-dtlpessoa", @class = "form-control input-sm", required = "required" })*@
+                        <div class="input-group date">
+                            <input id="sns-dtnasc-dtlpessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                        <label for="sns-tp-dtlpessoa">Tipo Pessoa</label>
+                        @*@Html.LabelFor(x => x.tppes)
+                        @Html.TextBoxFor(x => x.tppes, new { id = "sns-tp-dtlpessoa", @class = "form-control input-sm", required = "required" })*@
+                        <input id="sns-tp-dtlpessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                        <label for="sns-sexo-dtlpessoa">Sexo</label>
+                        @*@Html.LabelFor(x => x.tpsex)
+                    @Html.TextBoxFor(x => x.tpsex, new { id = "sns-sexo-dtlpessoa", @class = "form-control input-sm", required = "required" })*@
+                        <input id="sns-sexo-dtlpessoa" type="text" class="form-control input-sm" required="required" placeholder=" ">
+                    </div>
+
+                    @*<div class="form-group col-md-4 col-sm-6 col-xs-12">
+                        <button id="sns-voltar-dtlpessoa" type="button" class="btn btn-default btn-sm sns-top-space pull-right col-xs-12">
+                            <span class="fa fa-mail-reply sns-margin-icon" title="Voltar"></span>Voltar
+                        </button>
+                    </div>*@
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/detalhePessoa.js"></script>
+}
+
+
+
